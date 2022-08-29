@@ -2,7 +2,7 @@ import React from "react";
 import { AppBar, Toolbar, Typography, InputBase, Box } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
-import useStyles from "./styles";
+import useStyles from "./Styles.js";
 
 const Header = () => {
   const classes = useStyles();
@@ -12,21 +12,21 @@ const Header = () => {
         <Typography varient="h5" className={classes.title}>
           Travelvisory
         </Typography>
-      </Toolbar>
-      <Box display="flex">
-        <Typography varient="h5" className={classes.title}>
-          Explore new locations
-        </Typography>
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
+        <Box display="flex">
+          <Typography varient="h6" className={classes.title}>
+            Explore new locations
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search ..."
+              classes={{ root: classes.inputRoot, input: classes.inputInput }}
+            />
           </div>
-          <InputBase
-            placeholder="Search ..."
-            classes={{ root: classes.inputRoot, input: classes.inputInput }}
-          />
-        </div>
-      </Box>
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 };
